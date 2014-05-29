@@ -1,0 +1,253 @@
+html{
+	padding:0;
+	margin:0;
+	height:100%;
+}
+
+*{outline:0 !important;}
+
+.center {margin:0 auto;}
+.left {float:left;}
+.right {float:right;}
+body {background-color:#162e34; padding-top: 50px;}
+
+#wrapper .panel {
+	border:1px solid black;
+	width:40%;
+	min-width:600px;
+	border-radius:7px;
+	position:fixed;
+	top:20%;
+	left:30%;
+}
+
+#wrapper .panel-body {
+	padding:30px;
+}
+
+#username {
+	width:400px;
+	height:40px;
+	font-size:20px;
+}
+
+#login-page label {
+	font-size:22px;
+	margin-right:50px;
+	font-weight:normal;
+}
+
+#login-page label input[type="radio"] {
+	margin-right:5px;
+}
+
+#login-page .alert{
+	font-size:16px;
+}
+
+.navbar{
+	background-color:#7A250F;
+	border-color:#692424;
+	color:white;
+}
+
+.navbar-brand{
+	color:white ! important;
+}
+
+#main-page{
+	width:100%;
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+.middle-container{
+	position:fixed;
+	top:50px;
+	bottom:50px;
+	right:0;
+	left:0;
+}
+
+#footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #f5f5f5;
+}
+
+.left-bar, .right-bar, .middle-bar{
+	-webkit-transition: 500ms;
+	-moz-transition: 500ms;
+	-ms-transition: 500ms;
+	-o-transition: 500ms;
+	transition: 500ms;
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+}
+/* Left-bar */
+.left-bar{
+	margin-left:-250px;
+	position:absolute;
+	top:0;
+	left:250px;
+	bottom:0;
+	width:250px;
+	background-color:#185666;
+	outline: 1px solid transparent !important;
+	text-align:center;
+	color:white;
+	padding-top:30px;
+}
+
+.left-bar .nav, .right-bar ul{
+	text-align:left;
+}
+
+.nav li a{
+	color:#B5DDFF;
+	font-weight:bold;
+}
+
+.nav li.active a, .nav li.active a:hover{
+	background-color:#dbbe21;
+}
+
+
+.nav a:hover{
+	color:#428bca;
+}
+
+/* middle-bar */
+.middle-bar{
+	position:absolute;
+	right:250px;
+	left:250px;
+	height:100%;
+	/*background-color:orange;*/
+}
+
+.right-bar{
+	width:250px;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	background-color:#E9E7E7;
+	text-align:center;
+	overflow-y:scroll;
+	white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;      /* IE */
+}
+
+.chat-bar{
+	position:absolute;
+	bottom:0;
+	height:90px;
+	right:20px;
+	left:0px;
+	padding-top:10px;
+	border-top:1px solid lightgrey;
+	padding-bottom:1px;
+}
+
+.chat-bar-inner{
+	padding-left:20px;
+	padding-right:0px;
+}
+
+.chat-bar form button{
+	float:right;
+	margin-left:10px;
+	height:70px;
+}
+
+.chat-bar form > div textarea{
+	width:100%;
+	height:70px;
+	resize:none;
+	font-size:16px;
+}
+
+.chat-bar form > div{
+	overflow:hidden;
+}
+
+#chatEntries{
+	position:absolute;
+	bottom:90px;
+	top:0;
+	right:20px;
+	left:20px;
+	overflow-y:scroll;
+	font-size:20px;
+	background-color:white;
+	padding:15px;
+	padding-bottom:0px;
+}
+
+/*** SCROLL BAR ***/
+.scroll::-webkit-scrollbar {
+    width: 12px;
+}
+.scroll::-webkit-scrollbar-thumb{
+	 -webkit-border-radius: 50px;
+    border-radius: 50px;
+    background: rgba(100,100,100,0.3);
+}
+.scroll:hover::-webkit-scrollbar-thumb{
+    background: rgba(100,100,100,0.4);
+}
+.scroll::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+#userlist ul{
+	list-style-type: none;
+	padding-left:10px;
+}
+
+#userlist ul li{
+	padding-bottom:5px;
+}
+
+#userlist img{
+	height:28px;
+	width:28px;
+	margin-right:5px;
+}
+
+@media (max-width: 767px) {
+
+	.middle-bar,  .left-bar{
+		left:0;
+	}
+
+	.right-bar{
+		width:150px;
+	}
+
+	.middle-bar  {
+		right:150px;
+	}
+
+	.chat-bar, #chatEntries{
+		right:0px;
+		left:0px;
+	}
+
+	.left-bar-active{
+		left:250px !important;
+		z-index:999;
+		box-shadow:0px 1px 10px black;
+	}
+}

@@ -1,0 +1,87 @@
+doctype html
+html
+	head
+		title Node Chat
+		// css
+		link(rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css")
+		link(rel="stylesheet" type="text/css" href="css/style.css")
+		
+	body
+		div#wrapper
+			div#login-page
+				div.panel.panel-primary
+					div.panel-heading
+						div.panel-title
+							h3 Welcome to Node-Chat
+					div.panel-body
+						h1 Pick a Username
+						p Once you pick your username, you can enter the chat lobby! You will keep this username until you log off.
+						div.input-group
+							span.input-group-addon Username
+							input.form-control.center(type="text", placeholder="Username", maxlength="25")#username
+						h2 You are a . . .
+						div.left
+							div.form-inline
+								label.radio.control-label
+									input(type="radio", name="gender" value="male", checked)
+									| Male
+								label.radio.control-label
+									input(type="radio", name="gender", value="female")
+									| Female
+						div.right
+							button.btn.btn-success.btn-lg#login Start Chatting!
+					div#loginErrors(hidden=true)
+						div.alert.alert-danger.alert-dismissable
+							button(type='button', data-dismiss='alert').close &times;
+							strong Error!
+							span  That username has already been taken!
+			div#main-page(hidden=true)
+				div.navbar.navbar-default.navbar-fixed-top
+					div.container
+						button.navbar-toggle.left
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						div.navbar-header
+							a.navbar-brand Node Chat
+						
+				div.middle-container
+					div.left-bar
+						div
+							p There are <span id="usercount">0</span> users chatting!
+
+						div#generalRooms
+							h2 Rooms
+							ul.nav.nav-pills.nav-stacked
+
+						div#themedRooms
+							h2 Themed Rooms
+							ul.nav.nav-pills.nav-stacked
+
+					div#chatErrors
+					div.middle-bar
+						div.scroll#chatEntries
+						div.chat-bar
+							div.chat-bar-inner
+								form
+									button.btn.btn-lg.btn-success(type="submit")#submit Send
+									div
+										textarea.form-control.scroll(placeholder="Type your message")#messageInput
+					div.right-bar
+						div.scroll#userlist
+							h2 People
+							ul
+								li 
+									img(src="img/male.png")
+									span 00000000000000000000
+								li
+									img(src="img/female.png")
+									span Mike
+				div#footer
+					div.container
+						p Copyright: Mike Kucharski
+		// JavaScript imports at the end of body for faster page load
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+		script(src="bootstrap/js/bootstrap.min.js")
+		script(src="/socket.io/socket.io.js")
+		script(src="js/script.js")

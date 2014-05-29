@@ -1,0 +1,21 @@
+{
+  "name": "nodechat",
+  "description": "Client/Server Chatroom Web Application",
+  "version": "0.0.1",
+  "author": {
+    "name": "Mike Kucharski",
+    "email": "kucharskim@wit.edu"
+  },
+  "dependencies": {
+    "express": "3.4.8",
+    "jade": "1.2.0",
+    "socket.io": "0.9.16",
+    "underscore": "1.6.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikekucharski/nodechat"
+  },
+  "license": "MIT"
+}
